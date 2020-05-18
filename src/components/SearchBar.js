@@ -8,7 +8,7 @@ class SearchBar extends React.Component {
     state = {term: ""};
 
     SearchButton = <Button
-        onClick={(event => this.handleClick(event))}
+        onClick={(event => this.handleButtonClick(event))}
         variant="contained"
         color="primary"
         startIcon={<SearchIcon/>}>
@@ -25,7 +25,7 @@ class SearchBar extends React.Component {
     />;
 
 
-    handleClick = () => {
+    handleButtonClick = () => {
         this.props.onClick(this.state.term);
     };
 

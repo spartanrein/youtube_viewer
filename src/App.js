@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchBar from "./components/SearchBar";
+import VideoList from "./components/VideoList";
 import youtube from "./api/youtube";
 
 class App extends React.Component {
@@ -18,9 +19,15 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="search-bar">
-                <SearchBar onSubmit={this.onTermSubmit} onClick={this.onTermSubmit}/>
+            <div>
+                <div className="search-bar">
+                    <SearchBar onSubmit={this.onTermSubmit} onClick={this.onTermSubmit}/>
+                </div>
+                <div className="video-list">
+                    <VideoList videos={this.state.videos}>Hello</VideoList>
+                </div>
             </div>
+
         );
     };
 }
