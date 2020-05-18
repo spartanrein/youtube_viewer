@@ -12,7 +12,7 @@ class SearchBar extends React.Component {
         variant="contained"
         color="primary"
         startIcon={<SearchIcon/>}>
-        Save
+        Search
     </Button>;
 
     OutlinedInput = <OutlinedInput
