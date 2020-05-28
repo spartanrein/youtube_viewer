@@ -17,11 +17,11 @@ const useStyles = makeStyles({
     listItemText: {}
 });
 
-export default function VideoItem({video}) {
+export default function VideoItem({video, onVideoSelect}) {
     const classes = useStyles(video);
     return (
         <Box>
-            <ListItem className={classes.root}>
+            <ListItem className={classes.root} onClick={() => onVideoSelect(video)}>
                 <ListItemAvatar className={classes.img}>
                     <img alt="Remy Sharp" src={video.snippet.thumbnails.default.url}/>
                 </ListItemAvatar>
