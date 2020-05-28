@@ -5,7 +5,10 @@ import youtube from "./api/youtube";
 
 class App extends React.Component {
 
-    state = {videos: []};
+    state = {
+        videos: [],
+        selectedVideo: null,
+    };
 
     onTermSubmit = async (term) => {
         const response = await youtube.get('/search', {

@@ -1,5 +1,6 @@
 import React from "react";
 import VideoItem from "./VideoItem";
+import List from "@material-ui/core/List";
 
 const VideoList = (props) => {
     const video = props.videos.map((video) => {
@@ -9,7 +10,9 @@ const VideoList = (props) => {
     });
 
     return (
-        <div>{video}</div>
+        <List>
+            {video}
+        </List>
     );
 };
 

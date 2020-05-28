@@ -2,34 +2,37 @@ import React from "react";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import ListItemText from "@material-ui/core/ListItemText";
-import Typography from "@material-ui/core/Typography";
+import {makeStyles} from "@material-ui/core/styles";
+import Divider from "@material-ui/core/Divider";
+import Box from "@material-ui/core/Box";
 
-const VideoItem = ({video}) => {
+const useStyles = makeStyles({
+    root: {
+        // display: "flex",
+        // alignItems: "flex-start",
+    },
+    img: {
+        // maxWidth: "180px",
+    },
+    listItemText: {}
+});
 
+export default function VideoItem({video}) {
+    const classes = useStyles(video);
     return (
-        <ListItem alignItems="flex-start">
-            <ListItemAvatar>
-                <img alt="Remy Sharp" src={video.snippet.thumbnails.default.url}/>
-            </ListItemAvatar>
-            <ListItemText
-                primary={video.snippet.title}
-                secondary={
-                    <React.Fragment>
-                        <Typography
-                            component="span"
-                            variant="body2"
-                            // className={classes.inline}
-                            color="textPrimary"
-                        >
-                            Ali Connors
-                        </Typography>
-                        {video.snippet.description}
-                    </React.Fragment>
-                }
-            />
-        </ListItem>
-
+        <Box>
+            <ListItem className={classes.root}>
+                <ListItemAvatar className={classes.img}>
+                    <img alt="Remy Sharp" src={video.snippet.thumbnails.default.url}/>
+                </ListItemAvatar>
+                <ListItemText
+                    primary={video.snippet.title}
+                    // secondary={video.snippet.description}
+                />
+            </ListItem>
+            <Divider/>
+        </Box>
     );
 };
 
-export default VideoItem
+
